@@ -17,7 +17,7 @@ const News = () => {
             <Link to={`/category/${category_id}`}>
               <Button variant="danger">
                 <FaArrowLeft className="m-2"></FaArrowLeft>
-                All news in this categories
+                All news in this categories          
               </Button>
             </Link>
           </Card.Body>
