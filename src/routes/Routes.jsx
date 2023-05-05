@@ -1,4 +1,4 @@
-import {  Navigate, createBrowserRouter } from "react-router-dom";
+import { Navigate, createBrowserRouter } from "react-router-dom";
 import Main from "../layouts/Main";
 import Category from "../pages/Home/Category/Category";
 import NewsLayout from "../layouts/NewsLayout";
@@ -26,9 +26,9 @@ const router = createBrowserRouter([
         element: <Register></Register>,
       },
       {
-        path: 'terms',
-        element: <Terms></Terms>
-      }
+        path: "terms",
+        element: <Terms></Terms>,
+      },
     ],
   },
   {
@@ -38,13 +38,15 @@ const router = createBrowserRouter([
       // {
       //   path: "/",
       //   element: <Category></Category>,
-      //   loader: ()=> fetch('http://localhost:5000/news')
+      //   loader: ()=> fetch('https://the-news-dragon-sever-theta.vercel.app/news')
       // },
       {
         path: ":id",
         element: <Category></Category>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/categories/${params.id}`),
+          fetch(
+            `https://the-news-dragon-sever-theta.vercel.app/categories/${params.id}`
+          ),
       },
     ],
   },
@@ -60,7 +62,9 @@ const router = createBrowserRouter([
           </PrivetRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/news/${params.id}`),
+          fetch(
+            `https://the-news-dragon-sever-theta.vercel.app/news/${params.id}`
+          ),
       },
     ],
   },
